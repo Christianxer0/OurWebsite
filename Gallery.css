@@ -1,0 +1,149 @@
+:root {
+    --brand-blue: #4090ff;
+    --deep-navy: #0a2472;
+    --accent-gold: #ffcc00;
+    --white: #ffffff;
+    --text-gray: #cbd5e1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, var(--deep-navy) 0%, #00072d 100%);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* --- Reuse Navbar & Hero styles from Hangout page --- */
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo { 
+    display: flex; 
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 0px rgba(0,0,0,0.3));
+}
+
+
+
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav ul li a { text-decoration: none; color: white; font-weight: 500; }
+nav ul li a.active { color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold); }
+
+/* --- Hero --- */
+.hero {
+    height: 50vh;
+    background: linear-gradient(rgba(10, 36, 114, 0.5), rgba(10, 36, 114, 0.8)), url("images/gallery-hero.jpg") center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    position: relative;
+}
+
+.hero-text h1 { font-size: 4rem; margin: 0; }
+.wave-overlay {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--deep-navy);
+    clip-path: ellipse(70% 80% at 50% 100%);
+}
+
+/* --- Filter Bar --- */
+.filter-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--brand-blue);
+    color: white;
+    padding: 8px 25px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--brand-blue);
+    box-shadow: 0 0 15px rgba(64, 144, 255, 0.5);
+}
+
+/* --- Gallery Grid --- */
+.gallery-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Masonry Effects */
+.gallery-item.large { grid-row: span 2; grid-column: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+
+/* Overlay Text on Hover */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(10, 36, 114, 0.9));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay span {
+    font-weight: 600;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover .overlay span { transform: translateY(0); }

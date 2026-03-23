@@ -1,0 +1,118 @@
+:root {
+    --brand-blue: #4090ff;
+    --deep-navy: #0a2472;
+    --accent-gold: #ffcc00;
+    --white: #ffffff;
+    --text-gray: #cbd5e1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, var(--deep-navy) 0%, #00072d 100%);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* --- HERO --- */
+.place-hero {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(10, 36, 114, 0.4), rgba(0, 7, 45, 0.8)), url('images/rainforest_bg.jpg') center/cover;
+}
+
+.back-link {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: var(--accent-gold);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-divider {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #092063;
+    clip-path: ellipse(70% 100% at 50% 100%);
+}
+
+/* --- GRID LAYOUT --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    border-color: var(--brand-blue);
+    transform: translateY(-5px);
+}
+
+.glass-card.wide {
+    grid-column: span 2;
+}
+
+.glass-card h2 {
+    color: var(--brand-blue);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.glass-card p {
+    color: var(--text-gray);
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    color: var(--text-gray);
+}
+
+.list li {
+    padding: 5px 0;
+}
+
+.list li::before {
+    content: "• ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}

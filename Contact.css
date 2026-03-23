@@ -1,0 +1,93 @@
+:root {
+    --brand-blue: #4090ff;
+    --deep-navy: #0a2472;
+    --accent-gold: #ffcc00;
+    --white: #ffffff;
+    --text-gray: #cbd5e1;
+}
+
+body {
+    background: linear-gradient(180deg, var(--deep-navy) 0%, #00072d 100%);
+    background-attachment: fixed;
+    color: var(--white);
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- BACK BUTTON STYLE --- */
+.back-container {
+    padding: 30px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+}
+
+/* --- HERO --- */
+.contact-hero {
+    padding-top: 100px; /* Reduced since nav is gone */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-hero h1 { font-size: 3rem; margin: 0; }
+
+/* --- TEAM GRID --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.team-card:hover { border-color: var(--brand-blue); transform: translateY(-5px); }
+.team-card img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--brand-blue); margin-bottom: 15px; }
+
+/* --- GLASS FORM --- */
+.glass-form-card {
+    max-width: 600px; margin: 0 auto 100px; padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+}
+
+.input-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+.input-group input, .input-group textarea {
+    background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px; border-radius: 10px; color: white; margin-top: 8px;
+}
+
+.submit-btn {
+    width: 100%; padding: 15px; border-radius: 12px; border: none;
+    background: var(--accent-gold); font-weight: bold; cursor: pointer;
+}

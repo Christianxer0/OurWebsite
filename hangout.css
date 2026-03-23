@@ -1,0 +1,269 @@
+/* --- Global Variables --- */
+:root {
+    --brand-blue: #4090ff;
+    --deep-navy: #0a2472;
+    --accent-gold: #ffcc00;
+    --text-gray: #64748b;
+    --white: #ffffff;
+    --light-bg: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, var(--deep-navy) 0%, #00072d 100%);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Navigation (Standardized) --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-top {
+    font-size: 0.65rem;
+    display: block;
+    color: #cbd5e1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: -4px;
+}
+
+.logo-main {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+    letter-spacing: 2px;
+}
+
+.logo:hover { transform: scale(1.02); }
+.logo:hover .logo-main { color: var(--white); transition: 0.3s ease; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover, .dropdown:hover .dropbtn {
+    color: var(--accent-gold);
+}
+
+/* Nav Link Hover Underline */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+
+.nav-contact {
+    background: var(--accent-gold);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-contact:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+}
+
+/* --- Dropdown Fix --- */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+    z-index: 1001;
+}
+.dropdown-content a { color: var(--deep-navy); padding: 12px 16px; display: block; font-weight: 600; }
+.dropdown-content a::after { display: none; }
+.dropdown-content a:hover { background-color: #f1f5f9; color: var(--brand-blue); }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 60vh;
+    background: linear-gradient(rgba(10, 36, 114, 0.4), rgba(10, 36, 114, 0.7)), url("images/city.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    overflow: hidden;
+}
+
+.hero-text { z-index: 5; margin-top: 50px; }
+.hero-text h2 { font-size: 1.8rem; font-weight: 400; color: #cbd5e1; margin-bottom: -10px; }
+.hero-text h1 { font-size: 4.5rem; font-weight: 800; color: var(--white); text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+.hero-text p { font-size: 1.1rem; color: #e2e8f0; margin-top: 10px; }
+
+/* The Blue Wave Overlay */
+.wave-overlay {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: var(--deep-navy);
+    clip-path: ellipse(70% 80% at 50% 100%);
+    z-index: 2;
+}
+
+/* --- Content Grid --- */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Hangout Cards --- */
+.hangout-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    color: var(--deep-navy);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.hangout-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(64, 144, 255, 0.2);
+}
+
+.hangout-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.hangout-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.hangout-card:hover .hangout-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Badge over the image */
+.hangout-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-gold);
+    color: var(--deep-navy);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.hangout-info {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hangout-info h2 {
+    color: var(--brand-blue);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Explore Button inside Card */
+.btn-learn {
+    align-self: flex-start;
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: var(--deep-navy);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hangout-card:hover .btn-learn {
+    background: var(--brand-blue);
+    color: var(--white);
+    border-color: var(--brand-blue);
+}

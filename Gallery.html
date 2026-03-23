@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasig City | Gallery</title>
+    <link rel="stylesheet" href="Gallery.css">
+    <script src="Gallery.js"></script>
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <div class="logo">
+                <img src="logo pasig.jpg" alt="Pasig logo">
+                <div class="logo-text">
+                    <span class="logo-top">LUNGSOD NG</span>
+                    <span class="logo-main">PASIG</span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="HistoryPage.html">History</a></li>
+                <li><a href="Places.html">Places</a></li>
+                <li class="dropdown">
+                    <a href="main_food_page.html" class="dropbtn">Food ▼</a>
+                    <div class="dropdown-content">
+                        <a href="food_content.html">Local Delicacies</a>
+                        <a href="restaurant_content.html">Restaurants</a>
+                    </div>
+                </li>
+                <li><a href="hangout.html">Hangout</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-text">
+            <h2>Visual Journey</h2>
+            <h1>PASIG IN PHOTOS</h1>
+            <p>Capturing the heart, soul, and progress of our city.</p>
+        </div>
+        
+        <div class="wave-overlay"></div>
+    </header>
+
+   <section class="filter-container">
+    <a href="Gallery.html"><button class="filter-btn active">All</button></a>
+    <a href="gallerylandmarks.html"><button class="filter-btn ">Landmarks</button></a>
+    <a href="galleryfestivals.html"><button class="filter-btn">Festivals</button></a>
+</section>
+
+    <section class="gallery-wrapper">
+        <div class="gallery-grid">
+            
+            <div class="gallery-item large">
+                <img src="skyline.jpg" alt="Pasig Overview">
+                <div class="overlay">
+                    <span>City Skyline</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Cathedral.jpg" alt="Pasig Cathedral">
+                <div class="overlay">
+                    <span>Immaculate Conception Cathedral</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Market Place.jpg" alt="Mutya ng Pasig">
+                <div class="overlay">
+                    <span>Mutya ng Pasig Market</span>
+                </div>
+            </div>
+
+            <div class="gallery-item wide">
+                <img src="Cityhall.jpg" alt="City Hall">
+                <div class="overlay">
+                    <span>Pasig City Hall</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="foodtrip.jpg" alt="Kapitolyo Food">
+                <div class="overlay">
+                    <span>Dining in Kapitolyo</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="paskotitap.jpg" alt="Paskotitap">
+                <div class="overlay">
+                    <span>Paskotitap Festival</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

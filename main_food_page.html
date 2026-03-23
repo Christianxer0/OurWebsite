@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasig Food</title>
+    <link rel="stylesheet" href="food_page.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <div class="logo">
+                <img src="logo pasig.jpg" alt="Pasig logo">
+                <div class="logo-text">
+                    <span class="logo-top">LUNGSOD NG</span>
+                    <span class="logo-main">PASIG</span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="HistoryPage.html">History</a></li>
+                <li><a href="Places.html">Places</a></li>
+                
+                <li class="dropdown">
+                    <a href="#foodSection" class="active dropbtn">Food ▼</a>
+                    <div class="dropdown-content">
+                        <a href="food_content.html">Local Delicacies</a>
+                        <a href="restaurant_content.html">Restaurants</a>
+                    </div>
+                </li>
+                
+                <li><a href="hangout.html">Hangout</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-text">
+            <h2>Taste the Best</h2>
+            <h1>PASIG FOOD</h1>
+            <p>Discover local delicacies and culinary spots around the city.</p>
+        </div>
+        
+        <div class="wave-overlay"></div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <a href="food_content.html" class="card-link">
+                <div class="card" id="foodSection">
+                    <div class="card-icon">🍲</div>
+                    <h2>Local Food</h2>
+                    <p>Authentic Pasig delicacies and street food.</p>
+                </div>
+            </a>
+
+            <a href="restaurant_content.html" class="card-link">
+                <div class="card" id="restaurantSection2">
+                    <div class="card-icon">🍽️</div>
+                    <h2>Restaurants</h2>
+                    <p>Top-rated dining spots and cafes in the city.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script src="food_page.js"></script>
+</body>
+</html>
